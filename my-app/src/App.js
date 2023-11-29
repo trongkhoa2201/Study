@@ -1,9 +1,10 @@
+import Layout from './Components/Layout/Layout.jsx'
 import './App.css';
-import TodoList from './TodoList/TodoList';
+// import TodoList from './TodoList/TodoList';
 
 function App() {
   return (
-    <TodoList/>
+    <Layout/>
   );
 }
 

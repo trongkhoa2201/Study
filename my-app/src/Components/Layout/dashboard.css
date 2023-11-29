@@ -1,0 +1,35 @@
+.container{
+    width: 100%;
+    height: 100vh;
+}
+.content{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 98%;
+}
+.project-items{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.project-owner{
+    display: flex;
+    flex-direction: row;
+}
+.project-title{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin-left: 10px;
+}
+.status-filter{
+    display: flex;
+    justify-content: space-between;
+}
+p{
+    color: rgba(245, 245, 245, 0.775);
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+}
