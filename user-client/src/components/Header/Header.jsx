@@ -8,12 +8,27 @@ import { Button } from "@mui/material";
 import { FaRegUser } from "react-icons/fa6";
 import { IoBagOutline } from "react-icons/io5";
 import Navigation from "../Navigations/Navigation";
+import { Dropdown } from "react-bootstrap";
 
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
-  const handleClick = () => {
+  const token = localStorage.getItem("token");
+  const username = localStorage.getItem("username") || "";
+  const getUserShortName = (name) => {
+    if (!name) return "Profile";
+    const parts = name.trim().split(" ");
+    const first = parts[parts.length - 1];
+    const lastInitial = parts.length > 1 ? parts[0][0].toUpperCase() : "";
+    return `${first} ${lastInitial}.`;
+  };
+
+  const shortName = getUserShortName(username);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
     navigate("/login");
   };
   return (
@@ -47,9 +62,34 @@ const Header = () => {
                 </div>
 
                 <div className="part3 d-flex align-items-center ml-auto">
-                  <Button className="circle mr-3" onClick={handleClick}>
-                    <FaRegUser />
-                  </Button>
+                  <Dropdown>
+                    <Dropdown.Toggle variant="light" id="dropdown-user">
+                        <FaRegUser />
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu align="end">
+                      {token ? (
+                        <>
+                          <Dropdown.Item onClick={() => navigate("/profile")}>
+                            {shortName}
+                          </Dropdown.Item>
+                          <Dropdown.Item onClick={handleLogout}>
+                            Logout
+                          </Dropdown.Item>
+                        </>
+                      ) : (
+                        <>
+                          <Dropdown.Item onClick={() => navigate("/login")}>
+                            Login
+                          </Dropdown.Item>
+                          <Dropdown.Item onClick={() => navigate("/register")}>
+                            Register
+                          </Dropdown.Item>
+                        </>
+                      )}
+                    </Dropdown.Menu>
+                  </Dropdown>
+
                   <div className="cartTab d-flex align-items-center">
                     <span className="price">$3.29</span>
                     <div className="positon-relative ml-2">

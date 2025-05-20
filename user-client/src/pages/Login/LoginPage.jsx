@@ -1,7 +1,8 @@
 import React from 'react'
 import API from '../../api/api';
 import { Container, TextField, Button, Typography, Paper, Box } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -13,8 +14,9 @@ const LoginPage = () => {
     try {
       const res = await API.post("/auth/login", { email, password });
       localStorage.setItem("token", res.data.token);
+      localStorage.setItem("username", res.data.user.name);
       alert("Login successfully");
-      navigate('/profile');
+      navigate('/');
     } catch (err) {
       alert('Sai email hoặc mật khẩu');
     }
@@ -43,6 +45,13 @@ const LoginPage = () => {
           <Button variant="contained" fullWidth onClick={handleLogin}>
             Đăng nhập
           </Button>
+
+          <Typography variant="body2" align="center">
+            Nếu chưa có tài khoản,{' '}
+            <Link component={RouterLink} to="/register" underline="hover">
+            thì nhấn vào đây để đăng ký
+            </Link>
+          </Typography>
         </Box>
       </Paper>
     </Container>
