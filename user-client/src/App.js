@@ -1,20 +1,21 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import RegisterPage from './pages/RegisterPage';
-import LoginPage from './pages/LoginPage';
-import ProfilePage from './pages/ProfilePage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import RegisterPage from './pages/Register/RegisterPage';
+import LoginPage from './pages/Login/LoginPage';
+import ProfilePage from './pages/Profile/ProfilePage';
+import Header from './components/Header/Header';
 
 function App() {
   return (
-    <Router>
-      <nav>
-        <Link to="/register">Register</Link> | <Link to="/login">Login</Link> | <Link to="/profile">Profile</Link>
-      </nav>
+    <BrowserRouter>
+      <Header />
       <Routes>
+        <Route path= "/" element={<Home/>} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<ProfilePage />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

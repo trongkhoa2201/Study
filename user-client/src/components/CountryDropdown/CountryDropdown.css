@@ -1,0 +1,76 @@
+.countryDrop{
+    width: 170px;
+    height: 50px;
+    min-width: 170px;
+    text-align: left;
+    justify-content: flex-start;
+    color: black !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    border-radius: 7px !important;
+}
+.countryDrop span.ml-auto svg{
+    opacity: 0.7 !important;
+}
+.countryDrop .info{
+    padding: 10px 10px !important;
+}
+.countryDrop .lable{
+    font-size: 12px !important;
+    text-transform: capitalize !important;
+    color: rgba(0, 0, 0, 0.5) !important;
+    line-height: 16px;
+}
+.countryDrop .name{
+    font-size: 14px !important;
+    text-transform: capitalize !important;
+    color: #233a95 !important;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.locationDialog .MuiPaper-elevation{
+    padding: 25px;
+}
+.locationDialog .countryList{
+    margin-bottom: 0px;
+    max-height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.locationDialog .countryList li{
+    width: 100%;
+    list-style: none;
+}
+.locationDialog .countryList li button{
+    width: 100%;
+    text-transform: capitalize !important;
+    color: black !important;
+    justify-content: flex-start;
+    padding: 15px 20px !important;
+}
+
+.locationDialog .close-icon{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: black !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    cursor: pointer;
+}
+
+.locationDialog .close-icon svg{
+    font-size: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+::-webkit-scrollbar-thumb {
+    background: #ccc !important;
+}
+::-webkit-scrollbar-track{
+    background: transparent !important;
+}

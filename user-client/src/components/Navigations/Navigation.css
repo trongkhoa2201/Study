@@ -1,0 +1,39 @@
+nav .allCartTabs{
+    margin-left: 50px;
+}
+nav .allCartTabs .icon1 svg{
+    font-size: 25px !important;
+    margin-right: 20px;
+}
+nav .allCartTabs .icon2 svg{
+    font-size: 20px !important;
+    margin-left: 15px;
+}
+nav .allCartTabs .text{
+    margin-top: 5px;
+}
+nav .navPart2 ul{
+    margin-bottom: 0px;
+}
+nav .navPart2 ul li a{
+    text-decoration: none;
+}
+nav .navPart2 ul li a button{
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    transition: all 0.2s ease-in-out;
+    border-radius: 25px;
+}
+nav .navPart2 ul li a svg{
+    font-size: 20px !important;
+}
+nav .navPart2 ul li a:hover{
+    background: #f0faff;
+    color: #2bbef9;
+}
